@@ -1,13 +1,5 @@
 package com.konoplyanikovd.actual;
 
-/**
- * Function:两个线程交替执行打印 1~100
- * 等待通知机制版
- *
- * @author konoplyanikovd
- * Date: 07/03/2018 13:19
- * @since JDK 1.8
- */
 public class TwoThreadWaitNotifySimple {
 
     private boolean flag = false;
@@ -26,9 +18,6 @@ public class TwoThreadWaitNotifySimple {
         t2.start();
     }
 
-    /**
-     * 偶数线程
-     */
     public static class OuNum implements Runnable {
         private TwoThreadWaitNotifySimple number;
 
@@ -60,10 +49,6 @@ public class TwoThreadWaitNotifySimple {
         }
     }
 
-
-    /**
-     * 奇数线程
-     */
     public static class JiNum implements Runnable {
         private TwoThreadWaitNotifySimple number;
 

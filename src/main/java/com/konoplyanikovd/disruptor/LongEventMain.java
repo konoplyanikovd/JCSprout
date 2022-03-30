@@ -8,13 +8,7 @@ import com.lmax.disruptor.dsl.ProducerType;
 
 import java.util.concurrent.*;
 
-/**
- * Function:
- *
- * @author konoplyanikovd
- *         Date: 2018/8/29 01:45
- * @since JDK 1.8
- */
+
 public class LongEventMain {
     public static void main(String[] args) throws Exception {
 
@@ -70,7 +64,7 @@ public class LongEventMain {
 
         productExecutor.shutdown();
         while (!productExecutor.awaitTermination(1, TimeUnit.SECONDS)) {
-            System.out.println("线程还在执行。。。");
+            System.out.println("123123");
         }
         System.out.println("main over");
 

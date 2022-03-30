@@ -2,13 +2,6 @@ package com.konoplyanikovd.concurrent;
 
 import com.konoplyanikovd.classloader.Main;
 
-/**
- * Function: 线程状态测试
- *
- * @author konoplyanikovd
- *         Date: 06/03/2018 22:56
- * @since JDK 1.8
- */
 public class ThreadState {
 
     public static void main(String[] args) {

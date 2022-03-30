@@ -8,13 +8,6 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-/**
- * Function:实现 InitializingBean DisposableBean 接口
- *
- * @author konoplyanikovd
- *         Date: 20/03/2018 18:38
- * @since JDK 1.8
- */
 @Service
 public class SpringLifeCycleService implements InitializingBean,DisposableBean{
     private final static Logger LOGGER = LoggerFactory.getLogger(SpringLifeCycleService.class);

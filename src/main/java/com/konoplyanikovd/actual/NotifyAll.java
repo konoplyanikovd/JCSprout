@@ -1,12 +1,5 @@
 package com.konoplyanikovd.actual;
 
-/**
- * Function:
- *
- * @author konoplyanikovd
- * Date: 2021/7/1 23:08
- * @since JDK 11
- */
 public class NotifyAll {
 
 

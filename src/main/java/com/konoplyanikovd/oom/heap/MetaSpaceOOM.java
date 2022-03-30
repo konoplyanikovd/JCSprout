@@ -6,13 +6,6 @@ import net.sf.cglib.proxy.MethodProxy;
 
 import java.lang.reflect.Method;
 
-/**
- * Function:方法区内存溢出 1.8之后修改为元数据区
- *
- * @author konoplyanikovd
- *         Date: 29/12/2017 21:34
- * @since JDK 1.8
- */
 public class MetaSpaceOOM {
 
     public static void main(String[] args) {
@@ -27,7 +20,6 @@ public class MetaSpaceOOM {
                 }
             });
             enhancer.create() ;
-
         }
     }
 }

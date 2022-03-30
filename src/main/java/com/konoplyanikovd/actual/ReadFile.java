@@ -9,36 +9,23 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.*;
 
-/**
- * Function:读取文件
- *
- * @author konoplyanikovd
- *         Date: 05/01/2018 14:11
- * @since JDK 1.8
- */
 public class ReadFile {
     private final static Logger LOGGER = LoggerFactory.getLogger(ReadFile.class);
 
     private static List<String> content ;
     private static String path ="/Users/chenjie/Desktop/test.log" ;
 
-    /**
-     * 查找关键字
-     */
     private static final String KEYWORD = "login" ;
 
 
     private static Map<String,Integer> countMap ;
-    /**
-     * 去重集合
-     */
+
     private static Set<SortString> contentSet ;
     public static void main(String[] args) {
         contentSet = new TreeSet<>() ;
         countMap = new HashMap<>(30) ;
         File file = new File(path) ;
         try {
-            //查找
             sortAndFindKeyWords(file);
 
             LOGGER.info(contentSet.toString());
@@ -48,11 +35,6 @@ public class ReadFile {
         }
     }
 
-    /**
-     * 查找关键字
-     * @param file
-     * @throws IOException
-     */
     private static void sortAndFindKeyWords(File file) throws IOException {
         content = Files.readLines(file, Charset.defaultCharset());
         LOGGER.info(String.valueOf(content));

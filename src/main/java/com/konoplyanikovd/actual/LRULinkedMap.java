@@ -5,19 +5,10 @@ import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/**
- * Function:
- *
- * @author konoplyanikovd
- *         Date: 05/04/2018 12:04
- * @since JDK 1.8
- */
+
 public class LRULinkedMap<K,V> {
 
 
-    /**
-     * 最大缓存大小
-     */
     private int cacheSize;
 
     private LinkedHashMap<K,V> cacheMap ;

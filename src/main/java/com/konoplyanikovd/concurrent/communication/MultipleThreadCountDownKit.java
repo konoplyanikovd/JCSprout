@@ -2,23 +2,10 @@ package com.konoplyanikovd.concurrent.communication;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-/**
- * Function:
- *
- * @author konoplyanikovd
- * Date: 2019-04-17 19:35
- * @since JDK 1.8
- */
 public final class MultipleThreadCountDownKit {
 
-    /**
-     * 计数器
-     */
     private AtomicInteger counter;
 
-    /**
-     * 通知对象
-     */
     private Object notify ;
 
     private Notify notifyListen ;
@@ -31,18 +18,10 @@ public final class MultipleThreadCountDownKit {
         notify = new Object() ;
     }
 
-    /**
-     * 设置回调接口
-     * @param notify
-     */
     public void setNotify(Notify notify){
         notifyListen = notify ;
     }
 
-
-    /**
-     * 线程完成后计数 -1
-     */
     public void countDown(){
 
         if (counter.get() <= 0){
@@ -62,10 +41,6 @@ public final class MultipleThreadCountDownKit {
 
     }
 
-    /**
-     * 等待所有的线程完成
-     * @throws InterruptedException
-     */
     public void await() throws InterruptedException {
         synchronized (notify){
             while (counter.get() > 0){

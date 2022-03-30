@@ -1,20 +1,7 @@
 package com.konoplyanikovd.algorithm;
 
-/**
- * 链表排序, 建议使用归并排序，
- * 问题描述，给定一个Int的链表，要求在时间最优的情况下完成链表元素由大到小的排序，
- *     e.g: 1->5->4->3->2
- *     排序后结果 5->4->3->2->1
- *
- * @author 6563699600@qq.com
- * @date 6/7/2018 11:42 PM
- * @since 1.0
- */
 public class LinkedListMergeSort {
 
-    /**
-     * 定义链表数据结构，包含当前元素，以及当前元素的后续元素指针
-     */
     final static class Node {
         int e;
         Node next;
@@ -36,9 +23,6 @@ public class LinkedListMergeSort {
             Node middle = new Node();
             Node tmp = first;
 
-            /**
-             * 后期会对这里进行优化，通过一次遍历算出长度和中间元素
-             */
             for (int i = 0; i < length; i++) {
                 if (i == length / 2) {
                     break;
@@ -47,10 +31,6 @@ public class LinkedListMergeSort {
                 tmp = tmp.next;
             }
 
-            /**
-             *  这里是链表归并时要注意的细节
-             *  在链表进行归并排序过程中，会涉及到将一个链表打散为两个独立的链表，所以需要在中间元素的位置将其后续指针指为null；
-             */
             Node right = middle.next;
             middle.next = null;
 

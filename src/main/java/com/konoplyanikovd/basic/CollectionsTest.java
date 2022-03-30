@@ -11,13 +11,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-/**
- * Function:
- *
- * @author konoplyanikovd
- * Date: 2019-06-27 00:11
- * @since JDK 1.8
- */
 @Warmup(iterations = 5, time = 1, timeUnit = TimeUnit.SECONDS)
 @Measurement(iterations = 5, time = 1, timeUnit = TimeUnit.SECONDS)
 public class CollectionsTest {

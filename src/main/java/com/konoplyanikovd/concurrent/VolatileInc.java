@@ -2,16 +2,9 @@ package com.konoplyanikovd.concurrent;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-/**
- * Function:
- *
- * @author konoplyanikovd
- *         Date: 09/03/2018 00:34
- * @since JDK 1.8
- */
 public class VolatileInc implements Runnable{
 
-    private static volatile int count = 0 ; //使用 volatile 修饰基本数据内存不能保证原子性
+    private static volatile int count = 0 ;
 
     //private static AtomicInteger count = new AtomicInteger() ;
 
@@ -38,6 +31,6 @@ public class VolatileInc implements Runnable{
         }
 
 
-        System.out.println("最终Count="+count);
+        System.out.println("Count="+count);
     }
 }

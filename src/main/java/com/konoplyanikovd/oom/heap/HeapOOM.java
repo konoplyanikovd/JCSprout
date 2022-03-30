@@ -3,13 +3,6 @@ package com.konoplyanikovd.oom.heap;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Function:堆内存溢出
- *
- * @author konoplyanikovd
- *         Date: 29/12/2017 18:22
- * @since JDK 1.8
- */
 public class HeapOOM {
 
     public static void main(String[] args) {

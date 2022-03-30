@@ -6,13 +6,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.TimeUnit;
 
-/**
- * Function:用户服务
- *
- * @author konoplyanikovd
- *         Date: 2018/7/28 16:43
- * @since JDK 1.8
- */
 public class CommandUser extends HystrixCommand<String> {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(CommandUser.class);
@@ -21,24 +14,18 @@ public class CommandUser extends HystrixCommand<String> {
 
     public CommandUser(String userName) {
 
-
         super(Setter.withGroupKey(
-                //服务分组
                 HystrixCommandGroupKey.Factory.asKey("UserGroup"))
-                //线程分组
-                .andThreadPoolKey(HystrixThreadPoolKey.Factory.asKey("UserPool"))
-
-                //线程池配置
-                .andThreadPoolPropertiesDefaults(HystrixThreadPoolProperties.Setter()
-                        .withCoreSize(10)
-                        .withKeepAliveTimeMinutes(5)
-                        .withMaxQueueSize(10)
-                        .withQueueSizeRejectionThreshold(10000))
-
-                //线程池隔离
-                .andCommandPropertiesDefaults(
-                        HystrixCommandProperties.Setter()
-                                .withExecutionIsolationStrategy(HystrixCommandProperties.ExecutionIsolationStrategy.THREAD))
+                    .andThreadPoolKey(HystrixThreadPoolKey.Factory.asKey("UserPool"))
+                    .andThreadPoolPropertiesDefaults(HystrixThreadPoolProperties.Setter()
+                    .withCoreSize(10)
+                    .withKeepAliveTimeMinutes(5)
+                    .withMaxQueueSize(10)
+                    .withQueueSizeRejectionThreshold(10000))
+                    .andCommandPropertiesDefaults(
+                
+                HystrixCommandProperties.Setter()
+                    .withExecutionIsolationStrategy(HystrixCommandProperties.ExecutionIsolationStrategy.THREAD))
         )
         ;
         this.userName = userName;
@@ -53,6 +40,4 @@ public class CommandUser extends HystrixCommand<String> {
         TimeUnit.MILLISECONDS.sleep(100);
         return "userName=" + userName;
     }
-
-
 }

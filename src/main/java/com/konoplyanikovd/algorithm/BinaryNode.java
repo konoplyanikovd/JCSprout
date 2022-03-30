@@ -2,13 +2,6 @@ package com.konoplyanikovd.algorithm;
 
 import java.util.LinkedList;
 
-/**
- * Function:
- *
- * @author konoplyanikovd
- *         Date: 04/01/2018 18:26
- * @since JDK 1.8
- */
 public class BinaryNode {
     private Object data ;
     private BinaryNode left ;
@@ -73,17 +66,9 @@ public class BinaryNode {
     }
 
 
-    /**
-     * 二叉树的层序遍历 借助于队列来实现 借助队列的先进先出的特性
-     *
-     * 首先将根节点入队列 然后遍历队列。
-     * 首先将根节点打印出来，接着判断左节点是否为空 不为空则加入队列
-     * @param node
-     */
     public void levelIterator(BinaryNode node){
         LinkedList<BinaryNode> queue = new LinkedList<>() ;
 
-        //先将根节点入队
         queue.offer(node) ;
         BinaryNode current ;
         while (!queue.isEmpty()){

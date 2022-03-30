@@ -3,13 +3,6 @@ package com.konoplyanikovd.spring;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-/**
- * Function:使用 initMethod 和 destroyMethod 的方式
- *
- * @author konoplyanikovd
- *         Date: 19/03/2018 22:37
- * @since JDK 1.8
- */
 @Configuration
 public class LifeCycleConfig {
 

@@ -6,13 +6,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.TimeUnit;
 
-/**
- * Function:订单服务
- *
- * @author konoplyanikovd
- *         Date: 2018/7/28 16:43
- * @since JDK 1.8
- */
 public class CommandOrder extends HystrixCommand<String> {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(CommandOrder.class);
@@ -23,12 +16,8 @@ public class CommandOrder extends HystrixCommand<String> {
 
 
         super(Setter.withGroupKey(
-                //服务分组
                 HystrixCommandGroupKey.Factory.asKey("OrderGroup"))
-                //线程分组
                 .andThreadPoolKey(HystrixThreadPoolKey.Factory.asKey("OrderPool"))
-
-                //线程池配置
                 .andThreadPoolPropertiesDefaults(HystrixThreadPoolProperties.Setter()
                         .withCoreSize(10)
                         .withKeepAliveTimeMinutes(5)
@@ -52,6 +41,4 @@ public class CommandOrder extends HystrixCommand<String> {
         TimeUnit.MILLISECONDS.sleep(100);
         return "OrderName=" + orderName;
     }
-
-
 }

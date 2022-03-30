@@ -1,12 +1,5 @@
 package com.konoplyanikovd.concurrent.future;
 
-/**
- * Function:
- *
- * @author konoplyanikovd
- * Date: 2019-06-03 23:56
- * @since JDK 1.8
- */
 public class FutureTask<T> implements Runnable,Future<T> {
 
     private Callable<T> callable ;

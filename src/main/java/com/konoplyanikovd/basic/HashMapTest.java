@@ -5,13 +5,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-/**
- * Function:
- *
- * @author konoplyanikovd
- *         Date: 05/05/2018 12:42
- * @since JDK 1.8
- */
 public class HashMapTest {
     public static void main(String[] args) {
         Map<String, Integer> map = new HashMap<>(16);

@@ -1,13 +1,5 @@
 package com.konoplyanikovd.actual;
 
-/**
- * Function:两个线程交替执行打印 1~100
- * 等待通知机制版
- *
- * @author konoplyanikovd
- *         Date: 07/03/2018 13:19
- * @since JDK 1.8
- */
 public class TwoThreadWaitNotify {
 
     private int start = 1;
@@ -28,9 +20,6 @@ public class TwoThreadWaitNotify {
         t2.start();
     }
 
-    /**
-     * 偶数线程
-     */
     public static class OuNum implements Runnable {
         private TwoThreadWaitNotify number;
 
@@ -43,7 +32,6 @@ public class TwoThreadWaitNotify {
 
             while (number.start <= 10) {
                 synchronized (TwoThreadWaitNotify.class) {
-//                    System.out.println("偶数线程抢到锁了");
                     if (number.flag) {
                         System.out.println(Thread.currentThread().getName() + "+-+偶数" + number.start);
                         number.start++;
@@ -65,9 +53,6 @@ public class TwoThreadWaitNotify {
     }
 
 
-    /**
-     * 奇数线程
-     */
     public static class JiNum implements Runnable {
         private TwoThreadWaitNotify number;
 
@@ -79,7 +64,6 @@ public class TwoThreadWaitNotify {
         public void run() {
             while (number.start <= 10) {
                 synchronized (TwoThreadWaitNotify.class) {
-//                    System.out.println("奇数线程抢到锁了");
                     if (!number.flag) {
                         System.out.println(Thread.currentThread().getName() + "+-+奇数" + number.start);
                         number.start++;

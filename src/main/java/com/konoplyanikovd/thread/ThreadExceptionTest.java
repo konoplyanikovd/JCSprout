@@ -8,13 +8,6 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/**
- * Function:线程池异常测试
- *
- * @author konoplyanikovd
- * Date: 2019-03-07 20:35
- * @since JDK 1.8
- */
 public class ThreadExceptionTest {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(ThreadExceptionTest.class);

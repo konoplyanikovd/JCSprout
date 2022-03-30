@@ -3,13 +3,6 @@ package com.konoplyanikovd.guava.callback;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Function:
- *
- * @author konoplyanikovd
- *         Date: 2018/7/15 13:52
- * @since JDK 1.8
- */
 public class Caller {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(Caller.class);
@@ -20,14 +13,10 @@ public class Caller {
 
     private String question ;
 
-    /**
-     * 使用
-     */
     public void call(){
 
         LOGGER.info("开始提问");
 
-        //新建线程，达到异步效果
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -39,7 +28,7 @@ public class Caller {
             }
         }).start();
 
-        LOGGER.info("提问完毕，我去干其他事了");
+        LOGGER.info("123123");
     }
 
 

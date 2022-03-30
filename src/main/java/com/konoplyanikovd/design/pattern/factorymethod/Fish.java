@@ -1,12 +1,5 @@
 package com.konoplyanikovd.design.pattern.factorymethod;
 
-/**
- * Function:
- *
- * @author konoplyanikovd
- *         Date: 19/03/2018 14:32
- * @since JDK 1.8
- */
 public class Fish extends Animal {
 
 

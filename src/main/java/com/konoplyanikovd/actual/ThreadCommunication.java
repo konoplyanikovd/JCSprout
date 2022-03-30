@@ -8,13 +8,6 @@ import java.io.PipedReader;
 import java.io.PipedWriter;
 import java.util.concurrent.*;
 
-/**
- * Function:三种方式线程通信
- *
- * @author konoplyanikovd
- *         Date: 04/01/2018 22:57
- * @since JDK 1.8
- */
 public class ThreadCommunication {
     private final static Logger LOGGER = LoggerFactory.getLogger(ThreadCommunication.class);
 
@@ -26,11 +19,6 @@ public class ThreadCommunication {
         //cyclicBarrier();
     }
 
-    /**
-     * CyclicBarrier
-     *
-     * @throws Exception
-     */
     private static void cyclicBarrier() throws Exception {
         CyclicBarrier cyclicBarrier = new CyclicBarrier(3) ;
 
@@ -103,11 +91,6 @@ public class ThreadCommunication {
         LOGGER.info("main over total time={}", stop - start);
     }
 
-    /**
-     * 利用线程池的 awaitTermination 方法，每隔一秒钟检查线程池是否执行完毕
-     *
-     * @throws Exception
-     */
     private static void executorService() throws Exception {
         BlockingQueue<Runnable> queue = new LinkedBlockingQueue<>(10);
         ThreadPoolExecutor poolExecutor = new ThreadPoolExecutor(5, 5, 1, TimeUnit.MILLISECONDS, queue);
@@ -142,11 +125,6 @@ public class ThreadCommunication {
     }
 
 
-    /**
-     * 采用 join 线程间通信
-     *
-     * @throws InterruptedException
-     */
     private static void join() throws InterruptedException {
         Thread t1 = new Thread(new Runnable() {
             @Override
@@ -174,23 +152,18 @@ public class ThreadCommunication {
         t1.start();
         t2.start();
 
-        //等待线程1终止
         t1.join();
 
-        //等待线程2终止
         t2.join();
 
         LOGGER.info("main over");
     }
 
     public static void piped() throws IOException {
-        //面向于字符 PipedInputStream 面向于字节
         PipedWriter writer = new PipedWriter();
         PipedReader reader = new PipedReader();
 
-        //输入输出流建立连接
         writer.connect(reader);
-
 
         Thread t1 = new Thread(new Runnable() {
             @Override

@@ -6,13 +6,6 @@ import org.slf4j.LoggerFactory;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
-/**
- * Function:
- *
- * @author konoplyanikovd
- *         Date: 23/12/2017 22:27
- * @since JDK 1.8
- */
 public class CustomizeHandle implements InvocationHandler {
     private final static Logger LOGGER = LoggerFactory.getLogger(CustomizeHandle.class);
 
@@ -38,7 +31,6 @@ public class CustomizeHandle implements InvocationHandler {
         LOGGER.info("proxy class={}", proxy.getClass());
         return result;
     }
-
 
     private void before() {
         LOGGER.info("handle before");

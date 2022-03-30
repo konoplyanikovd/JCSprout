@@ -8,13 +8,6 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 
-/**
- * Function:用注解的方法
- *
- * @author konoplyanikovd
- *         Date: 20/03/2018 18:46
- * @since JDK 1.8
- */
 @Component
 public class AnnotationBean {
     private final static Logger LOGGER = LoggerFactory.getLogger(AnnotationBean.class);

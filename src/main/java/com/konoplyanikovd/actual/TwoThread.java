@@ -3,28 +3,13 @@ package com.konoplyanikovd.actual;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-/**
- * Function: 两个线程交替执行打印 1~100
- *
- * lock 版
- *
- * @author konoplyanikovd
- *         Date: 11/02/2018 10:04
- * @since JDK 1.8
- */
+
 public class TwoThread {
 
     private int start = 1;
 
-    /**
-     * 对 flag 的写入虽然加锁保证了线程安全，但读取的时候由于 不是 volatile 所以可能会读取到旧值
-     *
-     */
     private volatile boolean flag = false;
 
-    /**
-     * 重入锁
-     */
     private final static Lock LOCK = new ReentrantLock();
 
     public static void main(String[] args) {
@@ -41,9 +26,6 @@ public class TwoThread {
         t2.start();
     }
 
-    /**
-     * 偶数线程
-     */
     public static class OuNum implements Runnable {
 
         private TwoThread number;
@@ -72,9 +54,6 @@ public class TwoThread {
         }
     }
 
-    /**
-     * 奇数线程
-     */
     public static class JiNum implements Runnable {
 
         private TwoThread number;

@@ -1,49 +1,15 @@
 package com.konoplyanikovd.actual;
 
-/**
- * Function:
- *
- * @author konoplyanikovd
- *         Date: 2018/10/13 20:00
- * @since JDK 1.8
- */
-
 import org.junit.Assert;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 
-/**
- * Function:
- *
- 一个“.”代表一个任意字母。
-
- 注意事项：可以假设所有的单词只包含小写字母“a-z”
-
- 样例：
- addWord(“bad”);
- addWord(“dad”);
- addWord(“mad”);
- search(“pad”);  // return false;
- search(“bad”);  // return true;
- search(“.ad”); // return true;
- search(“b..”); // return true;
-
-
- 如果有并发的情况下，addword() 怎么处理？
- *
- * @author konoplyanikovd
- * @since JDK 1.8
- */
 public class Search {
 
     private static Map<String,String> ALL_MAP = new ConcurrentHashMap<>(50000) ;
 
-
-    /**
-     * 换成 ascii码 更省事
-     */
     private static final char[] dictionary = {'a','b','c','d','m','p'} ;
 
     public static void main(String[] args) throws InterruptedException {
@@ -144,7 +110,6 @@ public class Search {
             return result ;
         }
 
-        //做一次完整匹配
         String whole = ALL_MAP.get(keyWord) ;
         if (whole != null){
             return true ;
@@ -174,7 +139,6 @@ public class Search {
             }
 
         }
-
 
         return result ;
     }

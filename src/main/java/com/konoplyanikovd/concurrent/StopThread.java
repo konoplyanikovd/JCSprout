@@ -2,19 +2,11 @@ package com.konoplyanikovd.concurrent;
 
 import java.util.concurrent.TimeUnit;
 
-/**
- * Function:响应中断
- *
- * @author konoplyanikovd
- *         Date: 16/03/2018 01:41
- * @since JDK 1.8
- */
 public class StopThread implements Runnable {
     @Override
     public void run() {
 
         while ( !Thread.currentThread().isInterrupted()) {
-            // 线程执行具体逻辑
             System.out.println(Thread.currentThread().getName() + "运行中。。");
         }
 
@@ -31,6 +23,4 @@ public class StopThread implements Runnable {
         TimeUnit.MILLISECONDS.sleep(10) ;
         thread.interrupt();
     }
-
-
 }

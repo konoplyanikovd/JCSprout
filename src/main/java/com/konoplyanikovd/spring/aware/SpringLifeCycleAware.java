@@ -8,13 +8,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
-/**
- * Function:
- *
- * @author konoplyanikovd
- *         Date: 20/03/2018 21:54
- * @since JDK 1.8
- */
 @Component
 public class SpringLifeCycleAware implements ApplicationContextAware {
     private final static Logger LOGGER = LoggerFactory.getLogger(SpringLifeCycleAware.class);

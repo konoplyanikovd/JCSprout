@@ -2,13 +2,6 @@ package com.konoplyanikovd.concurrent;
 
 import java.util.Scanner;
 
-/**
- * Function:
- *
- * @author konoplyanikovd
- *         Date: 09/03/2018 00:09
- * @since JDK 1.8
- */
 public class Volatile implements Runnable{
 
     private static volatile boolean flag = true ;
@@ -25,7 +18,6 @@ public class Volatile implements Runnable{
         new Thread(aVolatile,"thread A").start();
 
 
-        System.out.println("main 线程正在运行") ;
 
         Scanner sc = new Scanner(System.in);
         while(sc.hasNext()){
@@ -42,13 +34,9 @@ public class Volatile implements Runnable{
                 break ;
             }
         }
-
-        System.out.println("主线程退出了！");
-
     }
 
     private void stopThread(){
         flag = false ;
     }
-
 }
