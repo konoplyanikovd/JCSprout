@@ -22,8 +22,10 @@ dependencies {
     implementation 'com.netflix.hystrix:hystrix-core:1.5.2'
     implementation 'com.lmax:disruptor:3.3.7'
     implementation 'org.openjdk.jmh:jmh-core:1.9.3'
-    implementation 'org.springframework.boot:spring-boot-starter'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    // implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework:spring-web:5.3.17'
 }
 
 group = 'com.konoplyanikovd.interview'
@@ -36,8 +38,5 @@ mainClassName = 'com.konoplyanikovd.interview.Application'
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
-}
-tasks.named('test') {
-	useJUnitPlatform()
 }
  

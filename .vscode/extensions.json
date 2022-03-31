@@ -10,6 +10,7 @@
         "streetsidesoftware.code-spell-checker-russian",
         "dotjoshjohnson.xml",
         "davidanson.vscode-markdownlint",
-        "tht13.html-preview-vscode"
+        "tht13.html-preview-vscode",
+        "Pivotal.vscode-boot-dev-pack"
     ]
 }
