@@ -9,6 +9,7 @@
         "esbenp.prettier-vscode",
         "streetsidesoftware.code-spell-checker-russian",
         "dotjoshjohnson.xml",
-        "DavidAnson.vscode-markdownlint"
+        "davidanson.vscode-markdownlint",
+        "tht13.html-preview-vscode"
     ]
 }
