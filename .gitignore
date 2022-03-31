@@ -1,5 +1,5 @@
 /build
 /.gradle
-/.vscode
 /gradlew
 /gradlew.bat
+/bin
